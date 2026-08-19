@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1785264375117,
+      "tag": "0000_fast_owl",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1787085361070,
+      "tag": "0001_colorful_omega_flight",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1787086103006,
+      "tag": "0002_oval_skin",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1787093764085,
+      "tag": "0003_medical_sumo",
+      "breakpoints": true
+    }
+  ]
+}

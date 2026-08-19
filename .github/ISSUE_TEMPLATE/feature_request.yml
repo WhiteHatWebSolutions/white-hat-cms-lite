@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a focused product improvement
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the publishing or administration problem.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the intended behavior and affected workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: security
+    attributes:
+      label: Security and compatibility
+      description: Note any effect on roles, approvals, secrets, migrations, backups, integrations, or public APIs.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: The request is focused on a single problem or workflow.
+          required: true

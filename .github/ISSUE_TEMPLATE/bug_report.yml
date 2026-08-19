@@ -1,0 +1,74 @@
+name: Bug report
+description: Report a reproducible defect
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, private content, personal data, or live authentication details.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 1.3.2
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Public publication
+        - Editorial desk
+        - Scheduling
+        - Media
+        - AI drafting
+        - Publishing connector
+        - Backup or restore
+        - Installation or deployment
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Current behavior
+      description: Describe the observed result.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest reliable sequence that reproduces the defect.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include browser, runtime, hosting platform, and relevant connector version without secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Remove tokens, email addresses, private content, hostnames, and account identifiers.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: The report contains no credentials, personal data, or private content.
+          required: true
+        - label: Existing issues were checked for the same defect.
+          required: true

@@ -1,0 +1,58 @@
+{
+  "name": "lightweight-publishing-cms",
+  "version": "1.3.2",
+  "description": "A lightweight, self-hosted CMS with editorial workflows, scheduled publishing, white-label themes, AI-assisted drafting, and multi-platform publishing connectors.",
+  "license": "MIT",
+  "keywords": [
+    "cms",
+    "headless-cms",
+    "publishing",
+    "cloudflare-workers",
+    "white-label",
+    "editorial-workflow"
+  ],
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "install:ci": "bash scripts/install-ci.sh",
+    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vite",
+    "build": "bash scripts/build-verified.sh",
+    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:fast": "node --test tests/*.test.mjs",
+    "validate:artifact": "bash scripts/validate-artifact.sh",
+    "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.45.2",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.53.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.5",
+    "@vitejs/plugin-rsc": "0.5.34",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.3.1",
+    "react-server-dom-webpack": "19.2.8",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "1.0.0-beta.6",
+    "vite": "8.2.1",
+    "wrangler": "4.124.0"
+  },
+  "overrides": {
+    "esbuild": "0.28.2"
+  },
+  "type": "module",
+  "displayName": "White Hat CMS Lite"
+}

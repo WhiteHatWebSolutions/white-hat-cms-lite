@@ -1,0 +1,13 @@
+export type ConnectorProvider = "ghost" | "webflow" | "contentful" | "sanity" | "strapi" | "hubspot" | "shopify" | "drupal" | "webhook";
+export type ConnectorConfig = Record<string, string>;
+export type ConnectorField = { key: string; label: string; type: "text" | "url"; placeholder: string };
+export type ConnectorDefinition = { label: string; secretLabel: string; fields: ConnectorField[] };
+export type ConnectorPost = { id: number; version: number; title: string; slug: string; description: string; content: string; category?: string; seoTitle?: string; seoDescription?: string };
+export type ConnectorRequest = { url: string; method: string; headers: Record<string, string>; body?: string; publish?: boolean; entryId?: string; signBody?: boolean };
+export const CONNECTOR_PROVIDERS: Record<ConnectorProvider, ConnectorDefinition>;
+export function providerIds(): ConnectorProvider[];
+export function normalizeConnectorInput(input: Record<string, unknown>, current?: Record<string, unknown> | null): { provider: ConnectorProvider; name: string; config: ConnectorConfig; enabled: boolean; deliveryMode: "draft" | "publish" };
+export function buildConnectorRequest(provider: ConnectorProvider, config: ConnectorConfig, credential: string, post: ConnectorPost, event: "scheduled" | "published", deliveryMode: "draft" | "publish"): ConnectorRequest;
+export function buildConnectionTestRequest(provider: ConnectorProvider, config: ConnectorConfig, credential: string): ConnectorRequest;
+export function assertPublicHttpsUrl(value: string, label?: string): string;
+export function markdownToHtml(markdown: string): string;
